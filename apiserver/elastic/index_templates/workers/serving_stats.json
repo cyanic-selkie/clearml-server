@@ -67,6 +67,9 @@
         "disk_free_home": {
           "type": "float"
         },
+        "disk_free_percent": {
+          "type": "float"
+        },
         "network_rx": {
           "type": "float"
         },
