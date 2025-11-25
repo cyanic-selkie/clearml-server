@@ -87,7 +87,9 @@ class WorkerStats:
                 agg_types_to_es[metric_item.aggregation]: {"field": "value", "missing": 0.0 }
             }
         }
-        split_by_resource = split_by_resource and metric_item.key.startswith("gpu_")
+        split_by_resource = split_by_resource and (
+            metric_item.key.startswith("gpu_") or metric_item.key == "disk_free_percent"
+        )
         if split_by_resource:
             split_aggs = {"split": {"terms": {"field": "variant"}, "aggs": agg}}
         else:

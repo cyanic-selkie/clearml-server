@@ -98,6 +98,10 @@ class ServingStats:
                     }
                 )
 
+            disk_free_percent, _ = cls._get_average_value(stats.get("disk_free_percent"))
+            if disk_free_percent is not None:
+                doc["disk_free_percent"] = disk_free_percent
+
             doc.update(
                 {
                     field: stats.get(field)

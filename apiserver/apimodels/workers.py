@@ -47,6 +47,7 @@ class MachineStats(Base):
     network_rx = FloatField()
     disk_free_home = FloatField()
     disk_free_temp = FloatField()
+    disk_free_percent = ListField(six.integer_types + (float,))
     disk_read = FloatField()
     disk_write = FloatField()
 
